@@ -1,0 +1,9 @@
+.agents/
+skills-lock.json
+.git/
+.gitignore
+.DS_Store
+Thumbs.db
+node_modules/
+vendor/
+*.zip

@@ -1,0 +1,34 @@
+# Local skills & agent config
+.agents/
+skills-lock.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# PHP/Composer
+vendor/
+composer.lock
+
+# Build artifacts
+*.zip
+*.tar.gz
+
+# Logs & env
+*.log
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# PHPCS cache
+.phpcs-cache

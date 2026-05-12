@@ -1,0 +1,289 @@
+/* Main Admin Styles */
+.aiig-settings-wrap * {
+    box-sizing: border-box;
+}
+
+.aiig-settings-wrap input[type="text"],
+.aiig-settings-wrap input[type="number"],
+.aiig-settings-wrap select,
+.aiig-settings-wrap textarea {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Exception for flex inputs */
+.aiig-settings-wrap .aiig-api-key-input {
+    width: auto;
+    /* Let flex handle it */
+}
+
+/* Meta Box Styles */
+.aiig-meta-box * {
+    box-sizing: border-box;
+}
+
+.aiig-meta-box select,
+.aiig-meta-box textarea,
+.aiig-meta-box input[type="text"],
+.aiig-meta-box input[type="number"] {
+    width: 100%;
+    max-width: 100%;
+}
+
+.aiig-meta-box img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.aiig-settings-wrap {
+    max-width: none !important;
+    width: 100%;
+    margin: 20px 20px 20px 0;
+}
+
+.aiig-settings-wrap h1 {
+    margin-bottom: 20px;
+}
+
+/* Tab Navigation */
+.aiig-nav-tabs {
+    border-bottom: 1px solid #ccc;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+.aiig-nav-tabs::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.aiig-nav-tab {
+    float: left;
+    margin: 0 5px -1px 0;
+    padding: 10px 15px;
+    background: #f1f1f1;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: #0073aa;
+    transition: all 0.3s ease;
+}
+
+.aiig-nav-tab:hover {
+    background: #fff;
+}
+
+.aiig-nav-tab.active {
+    background: #fff;
+    border-bottom: 1px solid #fff;
+    color: #000;
+    font-weight: 600;
+}
+
+/* Tab Content */
+.aiig-tab-content {
+    display: none;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 0 3px 3px 3px;
+}
+
+.aiig-tab-content.active {
+    display: block;
+}
+
+/* Two-column layout: Settings form left (1/3), Instructions sidebar right (2/3) */
+.aiig-tab-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* On mobile: Show settings form first (order: 1), instructions below (order: 2) */
+.aiig-tab-main {
+    min-width: 0;
+    order: 1;
+}
+
+.aiig-tab-sidebar {
+    order: 2;
+}
+
+/* On desktop: Show main form on left (1/3), sticky sidebar on right (2/3) */
+@media screen and (min-width: 1024px) {
+    .aiig-tab-layout {
+        grid-template-columns: 1fr 2fr;
+        gap: 30px;
+    }
+
+    .aiig-tab-main {
+        order: 1;
+    }
+
+    .aiig-tab-sidebar {
+        order: 2;
+        position: sticky;
+        top: 32px;
+        align-self: start;
+    }
+}
+
+/* Notice boxes styling */
+.aiig-notice {
+    margin-bottom: 15px;
+}
+
+.aiig-notice:last-child {
+    margin-bottom: 0;
+}
+
+/* Form Elements */
+.aiig-form-group {
+    margin-bottom: 20px;
+}
+
+.aiig-form-group .description {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+    font-size: 13px;
+}
+
+/* Buttons */
+.aiig-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #0073aa;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.aiig-settings-wrap .aiig-test-connection,
+.aiig-settings-wrap .aiig-test-image-gen,
+.aiig-tab-content .aiig-test-connection,
+.aiig-tab-content .aiig-test-image-gen,
+.aiig-settings-wrap .aiig-test-prompt-connection,
+.aiig-settings-wrap .aiig-test-gemini-connection,
+button.aiig-test-connection,
+button.aiig-test-image-gen,
+button.aiig-test-prompt-connection,
+button.aiig-test-gemini-connection {
+    width: auto !important;
+    max-width: none !important;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 15px !important;
+}
+
+.aiig-btn .dashicons {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.aiig-image-caption p {
+    margin: 0 0 8px 0;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #555;
+}
+
+.aiig-btn-small {
+    padding: 4px 8px;
+    font-size: 11px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.aiig-btn-small .dashicons {
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+}
+
+/* Loading Spinner */
+.aiig-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #0073aa;
+    border-radius: 50%;
+    animation: aiig-spin 1s linear infinite;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+@keyframes aiig-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Progress Bar */
+.aiig-progress {
+    width: 100%;
+    height: 20px;
+    background: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.aiig-progress-bar {
+    height: 100%;
+    background: #0073aa;
+    transition: width 0.3s ease;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+/* Messages */
+.aiig-message {
+    padding: 10px 15px;
+    margin: 15px 0;
+    border-left: 4px solid #0073aa;
+    background: #f0f8ff;
+    border-radius: 3px;
+}
+
+.aiig-message.error {
+    border-color: #dc3232;
+    background: #fff0f0;
+}
+
+.aiig-message.success {
+    border-color: #46b450;
+    background: #f0fff4;
+}
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+    .aiig-nav-tab {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .aiig-image-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+    }
+}
